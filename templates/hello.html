@@ -2,7 +2,12 @@
 <title>Hello from Flask</title>
 {% if name %}
   <h1>Hello {{ name }}!</h1>
-  <img src= {{ url_for('static', filename = 'ftth_test.png') }} width="660" height="660" alt="previous" title="Previous" border="0">
+<div class="range-slider" data-slider>
+  <span class="range-slider-handle" role="slider" tabindex="0"></span>
+  <span class="range-slider-active-segment"></span>
+  <input type="hidden">
+</div>
+  <img src= {{ url_for('static', filename = 'sc_rev_analysis.svg') }} width="660" height="660" alt="previous" title="Previous" border="0">
 {% else %}
   <h1>Hello, World!</h1>
 {% endif %}
