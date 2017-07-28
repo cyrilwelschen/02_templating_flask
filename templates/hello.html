@@ -17,12 +17,9 @@
 </head>
 
 <body>
-
-
-
+<!--
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -32,8 +29,6 @@
       </button>
       <a class="navbar-brand" href="">TVA Modell</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="">bli</a></li>
@@ -53,33 +48,54 @@
       </form>
 </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-
-
-
+-->
 
 <div class="range-slider">
-{% for i in range(3) %}
-<p> <b>Hello {{i}}</b> </p>
-  <input class="range-slider__range" id="hi" type="range" value="{{100+i*50}}" min="0" max="500" step="50">
-  <!-- to get current value of slider: $('#hi')[0].value. not sure about [0]... -->
+  <input class="range-slider__range" type="range" value="100" min="0" max="500">
   <span class="range-slider__value">0</span>
-{% endfor %}
 </div>
 
 
+
+            <div class="range-slider">
+{% for i in range(2) %}
+<p> <b>Hello {{i}}</b> </p>
+  <input class="range-slider__range" id="hi" type="range" value="{{100+i*5}}" min="0" max="500" step="50"/>
+  <span class="range-slider__value">0</span>
+{% endfor %}
+            </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="range-slider">
+{% for i in range(20) %}
+<p> <b>Hello {{i}}</b> </p>
+  <input class="range-slider__range" id="hi" type="range" value="{{100+i*5}}" min="0" max="500" step="50">
+  <!-- to get current value of slider: $('#hi')[0].value. not sure about [0]... -->
+  <span class="range-slider__value">0</span>
+{% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel affix">
 {% if name %}
 <div class="range-slider" data-slider>
   <span class="range-slider-handle" role="slider" tabindex="0"></span>
   <span class="range-slider-active-segment"></span>
   <input type="hidden">
 </div>
-  <img src= {{ url_for('static', filename = 'sc_rev_analysis.svg') }} width="660" height="660" alt="previous" title="Previous" border="0">
+  <img src= {{ url_for('static', filename = 'sc_rev_analysis.svg') }} width="660" height="360" alt="previous" title="Previous" border="0">
 {% else %}
   <h1>Hello, World!</h1>
 {% endif %}
+
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
